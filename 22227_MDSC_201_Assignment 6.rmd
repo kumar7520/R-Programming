@@ -1,0 +1,71 @@
+---
+title: "22227_MDSC_201_Assignment 6"
+output: html_notebook
+---
+
+## ̥
+
+```{r}
+data <- read.csv("employees.csv")
+
+data
+```
+
+```{r}
+data <- read.csv("employees.csv")
+
+print(data)
+```
+
+```{r}
+highest_salary <- max(data$SALARY)
+cat("The highest salary paid is : ", highest_salary)
+
+cat("\n\n")
+
+df1 <- subset(data, SALARY == max(SALARY))
+
+print("The information of the highest paid employee")
+
+print(df1)
+```
+
+```{r}
+df2 <- subset(data, JOB_ID == "IT_PROG")
+
+print("Employee information in IT Sector")
+
+print(df2)
+```
+
+```{r}
+df3 <- subset(data, SALARY >=6000 & JOB_ID == "IT_PROG")
+
+print("Printing the data of the employees in IT Sector with salary more than 6000")
+
+print(df3)
+```
+
+```{r}
+df4 <- data.frame(subset(data, MANAGER_ID == 103))
+
+print("Printing the information of the employees who are under manager no 103")
+
+print(df4)
+```
+
+```{r}
+df5 <- subset(data, DEPARTMENT_ID == 60)
+
+print("Employees information in department no 60")
+
+print(df5)
+```
+
+```{r}
+df6 <- subset.data.frame(data, SALARY >= 10000)
+
+print("Employees information whos salary is above 10000")
+
+print(df6)
+```

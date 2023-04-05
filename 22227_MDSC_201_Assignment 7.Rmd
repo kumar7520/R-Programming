@@ -1,0 +1,99 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+̥
+library(dplyr)
+ 
+print(starwars %>% filter(species == "Droid"))
+```
+
+```{r}
+library(tidyr)
+
+n = 10
+
+df1 = data.frame(S.No = c(1:n),Group.1 = c(23, 345, 76, 212, 88,199, 72, 35, 90,265),Group.2 = c(117, 89, 66, 334, 90,101, 178, 233, 45, 200),Group.3 = c(29, 101, 239, 289, 176,320, 89, 109, 199, 56))
+
+head(df1)
+```
+
+```{r}
+df2 <- df1 %>%gather(Group, Frequency,Group.1:Group.3)
+
+df2
+```
+
+```{r}
+library(stringr)
+
+cat("The length of the word Jai Sairam'Jai Sairam' is : ", str_length("Jai Sairam"))
+```
+
+```{r}
+library(forcats)
+library(dplyr)
+library(ggplot2)
+ 
+print(head(starwars %>% filter(!is.na(species))
+           %>% count(species, sort = TRUE)))
+```
+
+```{r}
+library(tibble)
+df3 <- data.frame(a = 1:3, b = letters[1:3],
+                   c = Sys.Date() - 1:3)
+print(df3)
+```
+
+```{r}
+df4 <- iris
+as_tibble(df4)
+```
+
+```{r}
+df5 <- 1:10
+
+print(df5)
+```
+
+```{r}
+tibble(df5, df5*5)
+```
+
+```{r}
+tibble(df5,df5**2)
+```
+
+```{r}
+tibble(a = df5, b = df5*5, c = df5**2)
+```
+
+```{r}
+print(as_tibble(mtcars))
+```
+
+```{r}
+tibble(x = runif(15),y=x*3)
+```
+
+```{r}
+tb1 <- tibble(
+    x = runif(8),
+    y = rnorm(8)
+)
+
+tb1[1]
+```
+
+```{r}
+tb1 %>% .$x
+```
+
+```{r}
+x<-5
+tibble(x=6,y=x)
+tibble(x=6,y = !!x)
+```
